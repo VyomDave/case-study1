@@ -1,0 +1,79 @@
+<html>
+
+<head>
+  <title>Case study 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+</head>
+
+<body>
+  <center>
+    <h1>Case study</h1>
+    <h2>Mobilenet model and Wallframe project</h2>
+    <div class="main-div">
+      <img src="https://www.91-img.com/pictures/133188-v4-oppo-f11-mobile-phone-large-1.jpg?tr=q-60">
+      <h4>Mobilenet model : Screen <span id="m1"></span></h4>
+      <h4>Wallframe project : computer mouse <span id="w1"></span></h4>
+      <h3 id="Output1"></h3>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="main-div">
+      <img
+        src="https://pyxis.nymag.com/v1/imgs/752/997/78f2aa40af1bd55ee028251fb8a147921f-simple-modern-summit-water-bottle--extra.rsquare.w600.jpg">
+      <h4>Mobilenet model : cap<span id="m2"></span></h4>
+      <h4>Wallframe project : vial<span id="w2"></span></h4>
+      <h3 id="Output2"></h3>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="main-div">
+      <img
+        src="https://assetscdn1.paytm.com/images/catalog/product/F/FO/FOOCASTOES-BLACA-J-1149273575CF767/1593087673106_0..jpg?imwidth=280&impolicy=hq">
+      <h4>Mobilenet model : shoe<span id="m3"></span></h4>
+      <h4>Wallframe project : cleats<span id="w3"></span></h4>
+      <h3 id="Output3"></h3>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="main-div">
+      <img
+        src="data:image/jpeg;base64,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">
+      <h4>Mobilenet model : box<span id="m4"></span></h4>
+      <h4>Wallframe project : flat panel display<span id="w4"></span></h4>
+      <h3 id="Output4"></h3>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="main-div">
+      <img src="https://www.ikea.com/us/en/images/products/stefan-chair-brown-black__0727320_PE735593_S5.JPG">
+      <h4>Mobilenet model : saddle<span id="m5"></span></h4>
+      <h4>Wallframe project : ladder-back chair<span id="w5"></span></h4>
+      <h3 id="Output5"></h3>
+    </div>
+    <div class="footer-div">
+      <br>
+      <br>
+      I would like to use Mobile net as it showed me 3 correct answers and wallframe gave 2 correct answers
+    </div>
+  </center>
+</body>
+
+</html>
